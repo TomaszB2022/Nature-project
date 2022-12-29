@@ -1,0 +1,39 @@
+.composition {
+position: relative;
+    &__photo {
+        width: 55%;
+        box-shadow: 0 20px 4rem rgba(#000, 0.4);
+        border-radius: 2px;
+        position: absolute;
+        transition: all .2s;
+        z-index: 10;
+        outline-offset: 2rem;
+        @include respond(lg) {outline-offset: 1rem;}
+        @include respond(tablet) {width: 30%;}
+
+        &--p1 {top: -2px; left: 0;
+        @include respond(lg) {top: 7px; left: 5rem;}
+        @include respond(tablet) {top: 15px; left: -8rem;}
+        @include respond(phone) {top: 15px; left: -2px;}}
+
+        &--p2 {top: 4rem; left: 20rem; 
+        @include respond(lg) {left: 18rem;}
+        @include respond(tablet) {top: 15px; left: 18rem;}
+        @include respond(phone) {top: 15px; left: 20rem}}
+        &--p3 {left: 8rem; top: 12rem;
+        @include respond(lg) {top: 9rem; left: 12rem;}
+        @include respond(tablet) {top: 15px; left: 43rem;}
+        @include respond(phone) {top: 15px; left: 40rem;}
+    }
+
+
+        &:hover {transform: scale(1.05) translateY(-5px); 
+        box-shadow: 0 40px 4rem rgba(#000, 0.5);
+        z-index: 11;
+        outline: 1.5rem solid green;
+        @include respond(lg) {outline: 1rem solid green;}}
+    }
+&:hover &__photo:not(:hover) {
+    transform: scale(.95)}
+       
+}

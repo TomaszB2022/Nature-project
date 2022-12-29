@@ -1,0 +1,99 @@
+.story {
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: 0 10 30 black;
+    background-color: rgba(255, 255, 255, 0.763);
+    border-radius: 3px;
+    padding: 6rem;
+    margin: 10rem;
+    transform: skewX(-12deg);
+    @include respond(tablet) {transform: none; margin-left: 1rem;}
+    
+   
+
+&__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative;
+    @include respond(tablet) {transform: skewX(0deg) translateX(-3rem)}
+    }
+
+&__img {
+    height: 100%;
+background-position: center;
+transform: translateX(-4rem) scale(1.4);
+transition: all .6s;}
+    
+&__text {transform: skewX(12deg);
+@include respond(tablet) {transform: skewX(0deg);}}
+
+&__figcaption {color: white; font-size: $size; position: absolute;
+top: 50%; left: 50%; font-weight: 600;
+transform: translate(-50%, 130%);
+text-transform: uppercase;
+text-align: center;
+opacity: 0;
+transition: all .6s;
+backface-visibility: hidden;
+}
+
+
+.story:hover &__figcaption {
+    transform: translate(-50%, -50%);
+    opacity: 1;}
+
+.story:hover &__img {transform: translateX(-4rem) scale(1);
+filter: blur(3px) brightness(70%);
+}
+
+}
+
+.stories__btn-text {&:link,
+    &:visited {
+        color: $secondary-color;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $secondary-color;
+        padding: 5px;
+        font-size: $size;
+        font-weight: 600;
+        transition: all .4s;
+        position: relative;
+        text-align: center;
+        margin: auto 0;
+    }
+
+    &:hover {
+        background-color: $secondary-color;
+        color: $primary-color;
+        cursor: pointer;
+        box-shadow: 0 1rem 2rem $gray-color;
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: 0 1rem 2rem rgba($gray-color, 0.3);
+        transform: translateY(0);
+    }}
+
+.bg-video {overflow: hidden;
+background-position: center;
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+z-index: -1;
+opacity: .15;
+
+&__content {width: 100%;
+height: 100%;
+object-fit: cover;}
+}
+
+

@@ -1,0 +1,208 @@
+.card {
+perspective: 150rem;
+-moz-perspective: 150rem;
+position: relative;
+height: 52rem;
+margin-top: 5rem;
+
+
+&__side {
+    color: white;
+    font-size: 2rem;
+    height: 52rem;
+    transition: all .8s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 15px 20px $gray-color;
+    
+    
+    &--back {
+    transform: rotateY(-180deg);
+    &-1 {
+        background-image: linear-gradient(to left bottom, orange, yellow);}
+    &-2 {
+     background-image: linear-gradient(to left bottom, green,
+        rgb(6, 64, 6));}
+    &-3 {
+        background-image: linear-gradient(to left bottom, blue, rgb(180, 130, 238));}
+
+    }
+
+&--front {
+    background-color: $primary-color;}
+
+}
+
+&:hover &__side--front {transform: rotateY(180deg);}
+&:hover &__side--back {transform: rotateY(0);}
+
+&__picture {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 23rem;
+    -webkit-clip-path: polygon(100% 0, 100% 84%, 0 100%, 0 0);
+    clip-path: polygon(100% 0, 100% 84%, 0 100%, 0 0);
+    position: relative;
+    //background-blend-mode: screen;
+ 
+&--1 {
+    background-image:
+    linear-gradient(to right bottom,rgba(255, 166, 0, 0.648),rgba(255, 255, 0, 0.621)),
+    url(./img/nat-5.jpg);
+}
+
+&--2 {
+    background-image:
+    linear-gradient(to right bottom, $secondary-color, $tretiary-color),
+    url(./img/nat-6.jpg);}
+
+&--3 {
+    background-image:
+    linear-gradient(to right bottom, $blue-color, $blue-color-dark),
+    url(./img/nat-7.jpg);}
+}
+
+&__heading {
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    color: $primary-color;
+    font-weight: 300;
+    top: 12rem;
+    right: 3rem;
+    position: absolute;
+    text-align: right;
+    width: 55%;
+    }
+    
+&__heading-text {
+    padding: 1rem 1.5rem;
+   
+    &--1 {
+    background-image: linear-gradient(to right bottom, rgba(255, 166, 0, 0.785), rgba(255, 255, 0, 0.812));}
+    &--2 {
+    background-image: linear-gradient(to right bottom, $secondary-color, $tretiary-color);}
+    &--3 {
+    background-image: linear-gradient(to right bottom, $blue-color, $blue-color-dark);}
+    }
+
+&__details {
+    padding: 1rem;
+    margin: 0 auto;
+&--list {
+    list-style: none;
+    width: 80%;
+&-element {
+color: $gray-color;
+text-align: center;
+font-size: $size;
+padding: 1rem;
+&:not(:last-child) {border-bottom: 1px solid gray;}}
+}}
+
+&__price-box {
+text-align: center;
+
+&--only {
+font-size: 3rem;
+padding-top: 12rem;}
+&--price {
+font-size: 6rem;
+font-weight: 200;}
+}
+
+@include respond(tablet) {
+height: auto;
+//margin-top: 5rem;
+
+
+    &__side {
+        color: white;
+        font-size: 2rem;
+        height: auto;
+        position: relative;
+        border-radius: 5px;
+
+
+        &--back {
+            transform: rotateY(0deg);
+        }
+
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(0deg);
+    }
+
+    &__heading {
+        font-size: 2.8rem;
+        text-transform: uppercase;
+        color: $primary-color;
+        font-weight: 300;
+        top: 12rem;
+        right: 3rem;
+        position: absolute;
+        text-align: right;
+        width: 55%;
+    }
+
+    &__heading-text {
+        padding: 1rem 1.5rem;
+
+        &--1 {
+            background-image: linear-gradient(to right bottom, rgba(255, 166, 0, 0.785), rgba(255, 255, 0, 0.812));
+        }
+
+        &--2 {
+            background-image: linear-gradient(to right bottom, $secondary-color, $tretiary-color);
+        }
+
+        &--3 {
+            background-image: linear-gradient(to right bottom, $blue-color, $blue-color-dark);
+        }
+    }
+
+    &__details {
+        padding: 1rem;
+        margin: 0 auto;
+
+        &--list {
+            list-style: none;
+            width: 80%;
+
+            &-element {
+                color: $gray-color;
+                text-align: center;
+                font-size: $size;
+                padding: 1rem;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid gray;
+                }
+            }
+        }
+    }
+
+    &__price-box {
+        text-align: center;
+    
+
+        &--only {
+            font-size: 3rem;
+            padding-top: 16rem;
+        }
+
+        &--price {
+            font-size: 4rem;
+            font-weight: 200;
+            padding-bottom: 20rem;
+        }
+
+}
+}
+}

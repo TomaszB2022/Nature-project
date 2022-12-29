@@ -1,0 +1,44 @@
+.booking {
+    width: 80%;
+    box-shadow: 0 15 50 black;
+    background-image: url(./img/nat-10.jpg);
+    border-radius: 3px;
+    padding: 6rem;
+    position: absolute;
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    &__shadow {
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    opacity: .9;
+    clip-path: polygon(0 0,
+        55% 0,
+        45% 100%,
+        0 100%,
+        0% 38%);
+        z-index: 0;
+    
+    @include respond(lg) {clip-path: none;}}
+
+&__form {
+width: 50%;
+padding: 6rem;
+z-index: 1;
+position: relative;
+display: inline-block;
+@include respond(lg){ width: 100%; padding: 0rem;}}
+}
+    
+.heading-secondary {position: relative;
+z-index: 1;
+@include respond(lg) {padding-bottom: 4rem; margin-top: -2rem;}
+}
